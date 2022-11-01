@@ -12,7 +12,9 @@ public class PlayerHandler : MonoBehaviour
     public GameObject BikeControl;
     public GameObject SitPos;
     public GameObject DeliverInfo;
-    
+
+    public GameObject iphoneUI;
+    public GameObject iphoneCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,26 @@ public class PlayerHandler : MonoBehaviour
     void Update()
     {
         BikeModeOn();
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (iphoneUI.activeInHierarchy)
+            {
+                iphoneUI.SetActive(false);
+            }
+            else
+            {
+                iphoneUI.SetActive(true);
+            }
+            if (iphoneCam.activeInHierarchy)
+            {
+                iphoneCam.SetActive(false);
+            }
+            else
+            {
+                iphoneCam.SetActive(true);
+            }
+           
+        }
         if(DeliverInfo.activeInHierarchy)
         {
             if (Input.GetMouseButton(1))
