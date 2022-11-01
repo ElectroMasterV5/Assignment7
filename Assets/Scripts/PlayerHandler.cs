@@ -11,6 +11,7 @@ public class PlayerHandler : MonoBehaviour
 
     public GameObject BikeControl;
     public GameObject SitPos;
+    public GameObject DeliverInfo;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,14 @@ public class PlayerHandler : MonoBehaviour
     void Update()
     {
         BikeModeOn();
-        if (Input.GetKey(KeyCode.Q))
+        if(DeliverInfo.activeInHierarchy)
+        {
+            if (Input.GetMouseButton(1))
+            {
+                DeliverInfo.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButton(1))
         {
             bikeMode = false;
             this.transform.GetComponent<CharacterController>().enabled = true;
@@ -49,9 +57,9 @@ public class PlayerHandler : MonoBehaviour
                         ChangeColorGrey();
                         if (Input.GetMouseButton(0))
                         {
-                           //raycastHit.transform.GetComponent<KeyDes>().SelfDes();
-                          
-                        }
+                           raycastHit.transform.GetComponent<TakeoutInfo>().Disp();
+                    DeliverInfo.SetActive(true);
+                }
                
                      }
                     else if (raycastHit.transform.CompareTag("Door"))
