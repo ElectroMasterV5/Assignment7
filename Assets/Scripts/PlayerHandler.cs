@@ -58,10 +58,10 @@ public class PlayerHandler : MonoBehaviour
                         if (Input.GetMouseButton(0))
                         {
                            raycastHit.transform.GetComponent<TakeoutInfo>().Disp();
-                    DeliverInfo.SetActive(true);
-                }
+                           DeliverInfo.SetActive(true);
+                        }
                
-                     }
+                    }
                     else if (raycastHit.transform.CompareTag("Door"))
                     {
                         ChangeColorGrey();
@@ -71,7 +71,16 @@ public class PlayerHandler : MonoBehaviour
                          }
 
                     }
-            
+            else if (raycastHit.transform.CompareTag("Deliver"))
+            {
+                ChangeColorGrey();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    raycastHit.transform.GetComponent<DeliverPoint>().DPDp();
+                }
+
+            }
+
             else
                     {
                         ChangeColorWhite();
