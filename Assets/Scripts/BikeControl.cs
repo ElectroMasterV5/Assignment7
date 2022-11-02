@@ -10,7 +10,7 @@ public class BikeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Speed = 10f;
+        Speed = 20f;
         FrontWheel = GameObject.Find("FrontWheel");
         Handlebar = GameObject.Find("Handlebar.028");
     }

@@ -8,6 +8,7 @@ TagManager:
   - Bike
   - Takeout
   - Deliver
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class DeliverPoint : MonoBehaviour
 {
     public GameObject DP;
     public GameObject takeoutBox;
+    public GameObject Gamecontroller;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,6 @@ public class DeliverPoint : MonoBehaviour
     {
         DP.SetActive(false);
         takeoutBox.SetActive(true);
+        Gamecontroller.GetComponent<GameControl>().DayPass();
     }
 }

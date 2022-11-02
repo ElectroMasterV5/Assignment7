@@ -15,6 +15,8 @@ public class PlayerHandler : MonoBehaviour
 
     public GameObject iphoneUI;
     public GameObject iphoneCam;
+
+    public GameObject GameControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -89,7 +91,7 @@ public class PlayerHandler : MonoBehaviour
                         ChangeColorGrey();
                          if (Input.GetMouseButtonUp(0))
                          {
-                   
+                    GameControl.GetComponent<GameControl>().InteractWithDoor();
                          }
 
                     }

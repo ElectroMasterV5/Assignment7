@@ -11,11 +11,13 @@ public class MapNavi : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         lineRenderer.SetPosition(0, startPos.position);
         lineRenderer.SetPosition(1, endPos.position);
     }
