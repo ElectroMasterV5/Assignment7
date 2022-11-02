@@ -9,6 +9,7 @@ TagManager:
   - Takeout
   - Deliver
   - Door
+  - Food
   layers:
   - Default
   - TransparentFX

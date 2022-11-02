@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour
     public GameObject MissionSpot;
     public GameObject MissionLight;
     public GameObject TakeoutDelivered;
+    public GameObject Food;
 
     public Animator Dialo;
     public GameObject DialoCanvas;
@@ -83,7 +84,7 @@ public class GameControl : MonoBehaviour
     }
     private void InitializeMissionSpot(int a)
     {
-        if (a == 1 || a == 3 || a == 4 || a == 5)
+        if (a == 1 || a == 3 || a == 4 )
         {
             MissionSpot.SetActive(true);
             MissionLight.SetActive(true);
@@ -95,6 +96,13 @@ public class GameControl : MonoBehaviour
             MissionSpot.SetActive(false);
             MissionLight.SetActive(false);
             TakeoutDelivered.SetActive(false);
+        }
+        if(a == 5)
+        {
+            MissionSpot.SetActive(false);
+            MissionLight.SetActive(false);
+            TakeoutDelivered.SetActive(false);
+            Food.SetActive(true);
         }
     }
     private void InitializeTakeout(int a)

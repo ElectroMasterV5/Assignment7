@@ -104,7 +104,15 @@ public class PlayerHandler : MonoBehaviour
                 }
 
             }
+            else if (raycastHit.transform.CompareTag("Food"))
+            {
+                ChangeColorGrey();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    raycastHit.transform.GetComponent<PickUpFood>().BePicked();
+                }
 
+            }
             else
                     {
                         ChangeColorWhite();

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeliverPoint : MonoBehaviour
+public class PickUpFood : MonoBehaviour
 {
-    public GameObject DP;
-    public GameObject takeoutBox;
+    public GameObject Food;
     public GameObject Gamecontroller;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +17,10 @@ public class DeliverPoint : MonoBehaviour
     {
         
     }
-    public void DPDp()
+    public void BePicked()
     {
-        DP.SetActive(false);
-        takeoutBox.SetActive(true);
-        Invoke("Passday", 2f);
+        Invoke("Passday",2f);
+        Food.SetActive(false);
     }
     private void Passday()
     {
