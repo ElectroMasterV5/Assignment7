@@ -6150,6 +6150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialoCanvasS: {fileID: 899067733}
+  GameController: {fileID: 636388562}
 --- !u!4 &899405716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 3}

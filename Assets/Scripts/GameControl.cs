@@ -58,7 +58,7 @@ public class GameControl : MonoBehaviour
         InitializeBikePlayer();
         InitializeTakeout(Days);
         InitializeNavigation(Days);
-
+        MissionSpot.SetActive(false);
     }
 
     private void InitializeBikePlayer()
@@ -73,16 +73,17 @@ public class GameControl : MonoBehaviour
 
     public void InteractWithDoor()
     {
-        if (Days == 1)
+        if (Days == 1 || Days == 2 || Days == 3 || Days == 4 || Days == 5)
         {
             DialoCanvas.SetActive(true);
-            Dialo.SetInteger("Days", 1);
+            Dialo.SetInteger("Days", Days);
+            Dialo.SetInteger("Begin", Days);
             InitializeMissionSpot(Days);
         }
     }
     private void InitializeMissionSpot(int a)
     {
-        if (a == 1)
+        if (a == 1 || a == 3 || a == 4 || a == 5)
         {
             MissionSpot.SetActive(true);
             MissionLight.SetActive(true);
@@ -106,7 +107,7 @@ public class GameControl : MonoBehaviour
     }
     private void InitializeNavigation(int a)
     {
-        if (a == 1)
+        if (a == 1 || a == 2 || a == 3 || a == 4 || a == 5)
         {
             MissionNaviPos.position = OldLadyMissionPos.position + (new Vector3(0, 50, 0));
         }
