@@ -27,6 +27,8 @@ public class GameControl : MonoBehaviour
 
     public Animator Dialo;
     public GameObject DialoCanvas;
+    public GameObject Ablum;
+    public GameObject Neighbor;
 
     public Sprite[] pic;
     // Start is called before the first frame update
@@ -98,7 +100,7 @@ public class GameControl : MonoBehaviour
     }
     private void InitializeMissionSpot(int a)
     {
-        if (a == 1 || a == 3 || a == 4 )
+        if (a == 1 || a == 3 || a == 4 || a == 5)
         {
             MissionSpot.SetActive(true);
             MissionLight.SetActive(true);
@@ -111,13 +113,13 @@ public class GameControl : MonoBehaviour
             MissionLight.SetActive(false);
             TakeoutDelivered.SetActive(false);
         }
-        if(a == 5)
+        /*if(a == 5)
         {
             MissionSpot.SetActive(false);
             MissionLight.SetActive(false);
             TakeoutDelivered.SetActive(false);
             Food.SetActive(true);
-        }
+        }*/
         if(a == 6)
         {
             MissionSpot.SetActive(true);

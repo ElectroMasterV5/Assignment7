@@ -6,6 +6,9 @@ public class AnimEvents : MonoBehaviour
 {
     public GameObject DialoCanvasS;
     public GameObject GameController;
+    public AudioClip Phoneclip;
+    public GameObject Ablum;
+    public GameObject Neighbor;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,21 @@ public class AnimEvents : MonoBehaviour
     void PassDay()
     {
         DialoCanvasS.SetActive(false);
+        Invoke("Delay",2f);
+    }
+
+    void Phone()
+    {
+        SounController.Instance.PlaySound(Phoneclip);
+    }
+
+    private void Delay(){
         GameController.transform.GetComponent<GameControl>().DayPass();
+    }
+
+    void Day20()
+    {
+        Ablum.SetActive(true);
+        Neighbor.SetActive(true);
     }
 }
