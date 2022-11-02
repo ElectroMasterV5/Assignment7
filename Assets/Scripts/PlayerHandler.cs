@@ -17,6 +17,9 @@ public class PlayerHandler : MonoBehaviour
     public GameObject iphoneCam;
 
     public GameObject GameControl;
+
+    public AudioClip knock;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +94,7 @@ public class PlayerHandler : MonoBehaviour
                         ChangeColorGrey();
                          if (Input.GetMouseButtonUp(0))
                          {
-                    GameControl.GetComponent<GameControl>().InteractWithDoor();
+                            StartCoroutine(Knocking());
                          }
 
                     }
@@ -162,5 +165,11 @@ public class PlayerHandler : MonoBehaviour
         {
             BikeControl.GetComponent<BikeControl>().enabled = false;
         }
+    }
+
+    IEnumerator Knocking(){
+        SounController.Instance.PlaySound(knock);
+        yield return new WaitForSecondsRealtime(3f);
+        GameControl.GetComponent<GameControl>().InteractWithDoor();
     }
 }
