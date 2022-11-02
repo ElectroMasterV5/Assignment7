@@ -6,6 +6,8 @@ public class PickUpFood : MonoBehaviour
 {
     public GameObject Food;
     public GameObject Gamecontroller;
+    public GameObject Ablum;
+    public GameObject Neighbor;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +27,7 @@ public class PickUpFood : MonoBehaviour
     private void Passday()
     {
         Gamecontroller.GetComponent<GameControl>().DayPass();
+        Ablum.SetActive(true);
+        Neighbor.SetActive(true);
     }
 }

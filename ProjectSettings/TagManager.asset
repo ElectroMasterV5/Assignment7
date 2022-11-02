@@ -10,6 +10,8 @@ TagManager:
   - Deliver
   - Door
   - Food
+  - Neighbor
+  - TakeoutDeliver
   layers:
   - Default
   - TransparentFX

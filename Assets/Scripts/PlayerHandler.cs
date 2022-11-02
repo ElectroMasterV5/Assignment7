@@ -100,7 +100,24 @@ public class PlayerHandler : MonoBehaviour
                 ChangeColorGrey();
                 if (Input.GetMouseButtonUp(0))
                 {
-                    raycastHit.transform.GetComponent<DeliverPoint>().DPDp();
+                    if (raycastHit.transform.GetComponent<DeliverPoint>().isActiveAndEnabled)
+                    {
+                        raycastHit.transform.GetComponent<DeliverPoint>().DPDp();
+                    }
+                    if (raycastHit.transform.GetComponent<LastCall>().isActiveAndEnabled)
+                    {
+                        raycastHit.transform.GetComponent<LastCall>().LastCallStart();
+                    }
+                }
+
+            }
+            else if (raycastHit.transform.CompareTag("Neighbor"))
+            {
+                ChangeColorGrey();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    GameControl.GetComponent<GameControl>().InteractWithNeighbor();
+
                 }
 
             }
@@ -113,6 +130,7 @@ public class PlayerHandler : MonoBehaviour
                 }
 
             }
+           
             else
                     {
                         ChangeColorWhite();

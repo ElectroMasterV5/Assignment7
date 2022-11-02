@@ -60,6 +60,11 @@ public class GameControl : MonoBehaviour
         InitializeTakeout(Days);
         InitializeNavigation(Days);
         MissionSpot.SetActive(false);
+        if (Days == 6)
+        {
+            InitializeMissionSpot(Days);
+            
+        }
     }
 
     private void InitializeBikePlayer()
@@ -81,6 +86,13 @@ public class GameControl : MonoBehaviour
             Dialo.SetInteger("Begin", Days);
             InitializeMissionSpot(Days);
         }
+       
+    }
+    public void InteractWithNeighbor()
+    {
+        DialoCanvas.SetActive(true);
+        Dialo.SetInteger("Days", Days);
+        Dialo.SetInteger("Begin", Days);
     }
     private void InitializeMissionSpot(int a)
     {
@@ -104,6 +116,14 @@ public class GameControl : MonoBehaviour
             TakeoutDelivered.SetActive(false);
             Food.SetActive(true);
         }
+        if(a == 6)
+        {
+            MissionSpot.SetActive(true);
+            TakeoutDelivered.SetActive(true);
+            MissionLight.SetActive(false);
+            MissionSpot.transform.GetComponent<DeliverPoint>().enabled = false;
+            MissionSpot.transform.GetComponent<LastCall>().enabled = true;
+        }
     }
     private void InitializeTakeout(int a)
     {
@@ -118,6 +138,10 @@ public class GameControl : MonoBehaviour
         if (a == 1 || a == 2 || a == 3 || a == 4 || a == 5)
         {
             MissionNaviPos.position = OldLadyMissionPos.position + (new Vector3(0, 50, 0));
+        }
+        if (a == 6)
+        {
+            MissionNaviPos.position = neighborMissionPos.position + (new Vector3(0, 50, 0));
         }
     }
 
