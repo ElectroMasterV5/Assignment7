@@ -27,6 +27,8 @@ public class GameControl : MonoBehaviour
 
     public Animator Dialo;
     public GameObject DialoCanvas;
+
+    public Sprite[] pic;
     // Start is called before the first frame update
     void Start()
     {
@@ -128,9 +130,9 @@ public class GameControl : MonoBehaviour
     private void InitializeTakeout(int a)
     {
         TakeoutInStore.SetActive(true);
-        if(a == 1)
+        if(a == 6)
         {
-            
+            OrderDetail.GetComponent<Image>().sprite = pic[1];
         }
     }
     private void InitializeNavigation(int a)
